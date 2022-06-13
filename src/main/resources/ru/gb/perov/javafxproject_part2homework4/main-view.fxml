@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ru.gb.perov.javafxproject_part2homework4.HelloController">
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.gb.perov.javafxproject_part2homework4.ChatController">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
     </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <TextArea fx:id="historyArea" editable="false" wrapText="true" VBox.vgrow="ALWAYS">
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor></TextArea>
+    <HBox alignment="BOTTOM_CENTER" spacing="10.0">
+        <TextField fx:id="userAnswer" promptText="Напишите сообщение..." HBox.hgrow="ALWAYS" />
+        <Button alignment="CENTER" contentDisplay="CENTER" defaultButton="true" onAction="#clickSendButton" prefWidth="50.0" text="Send" />
+    </HBox>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
 </VBox>
